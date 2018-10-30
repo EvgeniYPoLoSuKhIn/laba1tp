@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1540922473 source:c:\users\Евгений\desktop\laba1tp3\228\labatp\main.cpp
+	"base.h"
+	"keper.cpp"
+	"student.cpp"
+	"prepod.cpp"
+	"adm.cpp"
+
+1540922703 c:\users\Евгений\desktop\laba1tp3\228\labatp\base.h
+	"head.h"
+
+1540916310 c:\users\Евгений\desktop\laba1tp3\228\labatp\head.h
+	<iostream>
+	<stdio.h>
+	<string.h>
+	<fstream>
+	<cstring>
+
+1540923253 c:\users\Евгений\desktop\laba1tp3\228\labatp\keper.cpp
+	"head.h"
+	"keper.h"
+
+1540923274 c:\users\Евгений\desktop\laba1tp3\228\labatp\keper.h
+	"student.h"
+	"prepod.h"
+	"adm.h"
+
+1540922738 c:\users\Евгений\desktop\laba1tp3\228\labatp\student.h
+
+1540920308 c:\users\Евгений\desktop\laba1tp3\228\labatp\prepod.h
+
+1540920324 c:\users\Евгений\desktop\laba1tp3\228\labatp\adm.h
+
+1540921846 c:\users\Евгений\desktop\laba1tp3\228\labatp\student.cpp
+	"head.h"
+	"student.h"
+
+1540917303 c:\users\Евгений\desktop\laba1tp3\228\labatp\prepod.cpp
+	"prepod.h"
+	"head.h"
+
+1540920345 c:\users\Евгений\desktop\laba1tp3\228\labatp\adm.cpp
+	"head.h"
+	"adm.h"
+
