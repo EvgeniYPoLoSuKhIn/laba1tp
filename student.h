@@ -9,6 +9,7 @@ class student:public base{
     double avgball;
     public:
     student(int k, char *f, char *g, double a);
+    student(const student & arg);
     void sets(int k, char *f, char *g, double a);
     void show();
     void writes();

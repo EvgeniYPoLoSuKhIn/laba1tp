@@ -7,6 +7,14 @@
             strcpy(group,g);
             avgball=a;
         }
+
+        student::student(const student & arg){
+            kurs=arg.kurs;
+            strcpy(fio,arg.fio);
+            strcpy(group,arg.group);
+            avgball=arg.avgball;
+        }
+
         void student::sets(int k, char *f, char *g, double a){
             kurs=k;
             strcpy(fio,f);

@@ -4,11 +4,11 @@
 class adm:public base{
 protected:
   char dolz[20];
-  int tel;
+  char tel[20];
   char otv[20];
 public:
-    adm(char *f, char *d, int t,char *o);
-    void seta(char *f, char *d, int t,char *o);
+    adm(char *f, char *d, char *t,char *o);
+    void seta(char *f, char *d, char *t,char *o);
         void show();
         void writea();
         ~adm();

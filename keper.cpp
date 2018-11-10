@@ -1,14 +1,29 @@
 #include "head.h"
 #include "keper.h"
+
     void keper::creates(){
+         //std::cin.exceptions(std::istream::badbit | std::istream::failbit);
         cout<<"¬ведите им€ студента: ";
         cin>>vvod1;
         cout<<"¬ведите группу студента: ";
         cin>>vvod2;
-        cout<<"¬ведите курс студента: ";
-        cin>>vvodin;
+	    cout<<"¬ведите курс студента: ";
+	    z:
+	    if (!(cin >> vvodin)){
+        cin.clear();
+        cin.ignore();
+        cout << "error Ќекоректный ввод, введите корректный курс студента: ";
+        goto z;
+        }
         cout<<"¬ведите средний балл студента: ";
-        cin>>vvoddb;
+        x:
+	    if (!(cin >> vvoddb)){
+        cin.clear();
+        cin.ignore();
+        cout << "error Ќекоректный ввод, введите корректный средний балл студента: ";
+        fl=1;
+        goto x;
+        }
         s[s1]=new student(vvodin,vvod1,vvod2,vvoddb);
         s1++;
     }
@@ -30,10 +45,10 @@
         cout<<"¬ведите должность: ";
         cin>>vvod2;
         cout<<"¬ведите телефон: ";
-        cin>>vvodin;
+        cin>>vvod4;
         cout<<"¬ведите за что он ответственный: ";
         cin>>vvod3;
-        a[a1] =new adm(vvod1,vvod2,vvodin,vvod3);
+        a[a1] =new adm(vvod1,vvod2,vvod4,vvod3);
         a1++;
     }
 
@@ -98,10 +113,10 @@
         cout<<"¬ведите должность: ";
         cin>>vvod2;
         cout<<"¬ведите телефон: ";
-        cin>>vvodin;
-        cout<<"¬ведите за что он ответственный: ";
         cin>>vvod3;
-        a[o]->seta(vvod1,vvod2,vvodin,vvod3);
+        cout<<"¬ведите за что он ответственный: ";
+        cin>>vvod4;
+        a[o]->seta(vvod1,vvod2,vvod4,vvod3);
     }
   }
 
@@ -121,13 +136,21 @@
     if(a1!=0){
     for(int i=0;i<a1;i++)
     a[i]->writea();}
+    e.close();
     }
 
 
     void keper::reincornate(){
-     std::ifstream ifs("text.txt", std::ios::binary);
-     if(!ifs){std::cerr<<"File not found";}
-     ifs.read(reinterpret_cast<char*>(&s1), sizeof(s1));
+ try
+        {
+            ifstream ifs("text.txt", ios::binary);
+            if (!ifs)
+            {
+                throw 404;
+            }
+            else
+            {
+                ifs.read(reinterpret_cast<char*>(&s1), sizeof(s1));
      ifs.read(reinterpret_cast<char*>(&p1), sizeof(p1));
      ifs.read(reinterpret_cast<char*>(&a1), sizeof(a1));
 
@@ -150,8 +173,17 @@
      for(int i=0;i<a1;i++){
      ifs.read(reinterpret_cast<char*>(&vvod1), sizeof(vvod1));
      ifs.read(reinterpret_cast<char*>(&vvod2), sizeof(vvod2));
-     ifs.read(reinterpret_cast<char*>(&vvodin), sizeof(vvodin));
+     ifs.read(reinterpret_cast<char*>(&vvodin), sizeof(vvod4));
      ifs.read(reinterpret_cast<char*>(&vvod3), sizeof(vvod3));
-     a[i]=new adm(vvod1,vvod2,vvodin,vvod3);
+     a[i]=new adm(vvod1,vvod2,vvod4,vvod3);
      }
+     ifs.close();
+            }
+        }
+        catch(int i)
+        {
+            cout<<"error "<<i<< " - файл отсутствует!"<<endl;
+            ofstream outfile("text.txt", ios::app);
+            outfile.close();
+        }
      }

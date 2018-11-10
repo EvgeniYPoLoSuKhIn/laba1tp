@@ -1,14 +1,14 @@
 #include "head.h"
 #include "adm.h"
-   adm::adm(char *f, char *d, int t,char *o){
+   adm::adm(char *f, char *d, char *t,char *o){
           //  cout<<"вызов конструктора административный работник ";
-            tel=t;
+            strcpy(tel,t);
             strcpy(fio,f);
             strcpy(dolz,d);
             strcpy(otv,o);
         }
-    void adm::seta(char *f, char *d, int t,char *o){
-            tel=t;
+    void adm::seta(char *f, char *d, char *t,char *o){
+            strcpy(tel,t);
             strcpy(fio,f);
             strcpy(dolz,d);
             strcpy(otv,o);

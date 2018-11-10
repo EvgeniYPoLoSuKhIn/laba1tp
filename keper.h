@@ -9,7 +9,7 @@ private:
     prepod *p[10];
     adm *a[10];
     double vvoddb;
-    int s1=0, p1=0,a1=0, vvodin,o;
+    int s1=0, p1=0,a1=0, vvodin,o, fl;
     char vvod1[20], vvod2[20],vvod3[20],vvod4[20];
     public:
     void creates();
